@@ -41,7 +41,7 @@ stages:
         repository: 'sebug/pc-dashboard'
         command: 'push'
         tags: |
-          'sebug/pc-dashboard:$(Build.BuildId)'
+          $(tag)
 
 
 
