@@ -34,3 +34,12 @@ stages:
         tags: |
           $(tag)
 
+    - task: Docker@2
+      displayName: Push pc dashboard
+      inputs:
+        containerRegistry: 'SebugDockerHub'
+        repository: 'sebug/pc-dashboard'
+        command: 'push'
+        tags: |
+          $(tag)
+
