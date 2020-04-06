@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  pcdashboard:
+    image: ${DOCKER_REGISTRY-}pcdashboard
+    build:
+      context: .
+      dockerfile: ./Dockerfile
