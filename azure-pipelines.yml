@@ -31,9 +31,9 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/PCDashboard/Dockerfile'
-        tags: |
-          'sebug/pc-dashboard'
-          'sebug/pc-dashboard:$(Build.BuildId)'
+        tags: $(tag)
+
+    - script: cd $(Build.SourcesDirectory)/PCDashboard && docker build -t sebug/pc-dashboard:$(Build.BuildId) .
 
     - task: Docker@2
       displayName: Push pc dashboard
@@ -41,8 +41,7 @@ stages:
         containerRegistry: 'SebugDockerHub'
         repository: 'sebug/pc-dashboard'
         command: 'push'
-        tags: |
-          $(tag)
+        tags: $(tag)
 
 
 
