@@ -29,6 +29,8 @@ namespace PCDashboard
 
             app.UseRouting();
 
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
