@@ -32,6 +32,7 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/PCDashboard/Dockerfile'
         tags: |
+          'sebug/pc-dashboard'
           'sebug/pc-dashboard:$(Build.BuildId)'
 
     - task: Docker@2
