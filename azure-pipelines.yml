@@ -32,5 +32,5 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/PCDashboard/Dockerfile'
         tags: |
-          $(Build.BuildId)
+          $(tag)
 
