@@ -32,7 +32,7 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/PCDashboard/Dockerfile'
         tags: |
-          $(tag)
+          'sebug/pc-dashboard:$(Build.BuildId)'
 
     - task: Docker@2
       displayName: Push pc dashboard
@@ -41,5 +41,7 @@ stages:
         repository: 'sebug/pc-dashboard'
         command: 'push'
         tags: |
-          $(tag)
+          'sebug/pc-dashboard:$(Build.BuildId)'
+
+
 
