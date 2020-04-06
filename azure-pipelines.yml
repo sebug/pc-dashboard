@@ -21,9 +21,16 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
+      displayName: Docker Login
+      inputs:
+        containerRegistry: 'SebugDockerHub'
+        command: login
+
+    - task: Docker@2
       displayName: Build an image
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/PCDashboard/Dockerfile'
         tags: |
-          $(tag)
+          $(Build.BuildId)
+
